@@ -1,0 +1,24 @@
+{
+  "name": "swiffer_web",
+  "version": "0.0.0",
+  "description": "swiffer frontend webserver ",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/puzzfuzz/swiffer_web.git"
+  },
+  "author": "Chris Puzzo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/puzzfuzz/swiffer_web/issues"
+  },
+  "dependencies": {
+    "axon": "~2.0.1",
+    "express": "~4.10.4",
+    "request": "~2.49.0",
+    "socket.io": "~1.2.1"
+  }
+}
