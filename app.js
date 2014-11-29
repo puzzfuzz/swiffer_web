@@ -6,7 +6,7 @@ var server = require('http').createServer(app);
 var io = require('socket.io').listen(server);
 
 var subSocket = require('./lib/subscribe');
-var badges = require('./models/badges');
+var exceptions = require('./models/exceptions');
 
 server.listen(3000, function() {
 	console.log('Server is running on port %d', 3000);
@@ -23,14 +23,14 @@ app.get('/', function(req, res) {
 });
 
 io.sockets.on('connection', function(socket){
-	badges.get(function(err, data){
+	exceptions.get(function(err, data){
 		if (err) return;
-		data.forEach(function(badge){
-			socket.emit('badge', badge);
+		data.forEach(function(exception){
+			socket.emit('exception', exception);
 		});
 	});
 });
 
 subSocket.on('message', function(message){
-	io.sockets.emit('badge', message);
+	io.sockets.emit('exception', message);
 });

@@ -3,11 +3,11 @@
 var request = require('request');
 
 /**
- * Get badges from the pub/sub server
+ * Get exceptions from the pub/sub server
  * @param {Function} callback
  */
 exports.get = function(callback) {
-	request('http://localhost:1337/badges', function(err, response, body){
+	request('http://localhost:1337/exception', function(err, response, body){
 		callback(err, JSON.parse(body));
 	});
 };
